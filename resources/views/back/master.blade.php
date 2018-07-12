@@ -194,6 +194,8 @@
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
+       @yield('content')
+     </div>
       <!-- footer-->
     <footer class="sticky-footer">
       <div class="container">

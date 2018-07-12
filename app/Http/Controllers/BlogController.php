@@ -13,7 +13,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $cat=\App\Model\Blog::all();
+
+        return view('back.blogs.index', compact('cat'));
+
     }
 
     /**
@@ -23,7 +26,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+    $cat=\App\Model\Category::get();
+       return view('back.blogs.create', compact('cat' ));
     }
 
     /**
@@ -34,7 +38,22 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cat=new \App\Model\Blog;
+      $cat->id=$request-> get('id');
+      $cat->users_id=$request-> get('users_id');
+      $cat->category_id=$request-> get('categories_id');
+
+      $cat->title=$request-> get('title');
+      $cat->description=$request-> get('description');
+      $cat->figure=$request-> get('figure');
+      $cat->fullstory=$request-> get('fullstory');
+      $cat->heading=$request-> get('heading');
+      $cat->status=$request-> get('status');
+
+
+
+      $cat->save();
+      return redirect('blog')-> with('success','information has added');
     }
 
     /**
@@ -45,8 +64,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $cat= \App\Model\Blog::find($id);
+        return view('back.blogs.show',compact('cat'));    }
 
     /**
      * Show the form for editing the specified resource.
@@ -56,7 +75,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+         $cat= \App\Model\Blog::find($id);
+        return view('back.blogs.edit',compact('cat','id'));
     }
 
     /**
@@ -68,7 +88,19 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cat= \App\Model\Blog::find($id);
+      $cat->users_id=$request->get('users_id');
+      $cat->category_id=$request-> get('categories_id');
+
+      $cat->title=$request-> get('title');
+      $cat->description=$request-> get('description');
+      $cat->figure=$request-> get('figure');
+      $cat->fullstory=$request-> get('fullstory');
+      $cat->heading=$request-> get('heading');
+      $cat->status=$request-> get('status');
+
+        $cat->save();
+        return redirect('blog')->with('success');
     }
 
     /**
@@ -79,6 +111,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+         $cat = \App\Model\Blog::find($id);
+        $cat->delete();
+        return redirect('blog');     
+          }
 }

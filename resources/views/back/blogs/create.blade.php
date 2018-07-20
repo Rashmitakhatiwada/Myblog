@@ -27,7 +27,7 @@
         <label for="description"> description: </label>
         <input type="text" class="form-control" name="description">
         <label for="figure"> figure: </label>
-        <input type="text" class="form-control" name="figure">
+        <input type="file" class="form-control" name="figure">
         <label for="heading"> heading: </label>
         <input type="text" class="form-control" name="heading">
         <label for="fullstory"> full story: </label>

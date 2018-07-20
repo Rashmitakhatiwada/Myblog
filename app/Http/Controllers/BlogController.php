@@ -11,6 +11,12 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $cat=\App\Model\Blog::all();
@@ -36,16 +42,22 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function store(Request $request)
     {
         $cat=new \App\Model\Blog;
+      $photoname=time().'.'.$request->figure->getClientOriginalExtension();
+      $request->figure->move(public_path('uploads'),$photoname);
+
       $cat->id=$request-> get('id');
       $cat->users_id=$request-> get('users_id');
       $cat->category_id=$request-> get('categories_id');
 
       $cat->title=$request-> get('title');
       $cat->description=$request-> get('description');
-      $cat->figure=$request-> get('figure');
+      $cat->figure=$photoname ;
       $cat->fullstory=$request-> get('fullstory');
       $cat->heading=$request-> get('heading');
       $cat->status=$request-> get('status');

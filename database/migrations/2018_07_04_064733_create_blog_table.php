@@ -19,7 +19,7 @@ class CreateBlogTable extends Migration
             $table->integer('users_id')-> unsigned();
             $table->integer('category_id')-> unsigned();
             $table->string('title');
-            $table->string('figure');
+            $table->file('figure');
             $table->longText('description');
             $table->string('heading');
             $table->boolean('status');

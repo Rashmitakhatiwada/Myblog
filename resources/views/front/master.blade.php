@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="registration.html" data-hover="Registration">Registration</a></li> 
 						<li><a href="about.html" data-hover="About">About</a></li>
 						<li><a href="services.html" data-hover="SERVICES">SERVICES</a></li>
-						<li><a href="login.html" data-hover="Login">Login</a></li>
+						<li><a href="/login" data-hover="Login">Login</a></li>
 						<li><a href="contact.html" data-hover="CONTACT">Contact</a></li>
 					</ul>
 					<div class="search-box">
@@ -65,6 +65,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="cl-effect-16">
 						<li><a class="active" href="index.html" data-hover="HOME">Home</a></li> 
 						<li><a href="about.html" data-hover="About">About</a></li>
+						@foreach($cat as $cat)<li><a href="#" data-hover="Grids"> 
+             				{{ $cat->name }}
+             			</a></li>	@endforeach
 						<li><a href="grid.html" data-hover="Grids">Grids</a></li>
 						<li><a href="services.html" data-hover="Services">Services</a></li>
 						<li><a href="gallery.html" data-hover="Gallery">Gallery</a></li>
@@ -146,114 +149,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <!--//banner-->
 			  <!--/top-news-->
 			  <div class="top-news">
-				<div class="top-inner">
-					<div class="col-md-6 top-text">
-						 <a href="single.html"><img src="images/pic1.jpg" class="img-responsive" alt=""></a>
-						    <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-							<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-						    <p>On Jun 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-					 </div>
-					<div class="col-md-6 top-text two">
-						 <a href="single.html"><img src="images/pic2.jpg" class="img-responsive" alt=""></a>
-						    <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-							<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-						    <p>On Jun 27 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-					 </div>
-					 <div class="clearfix"> </div>
-				 </div>
-				 <div class="top-inner second">
-					<div class="col-md-6 top-text">
-						 <a href="single.html"><img src="images/pic3.jpg" class="img-responsive" alt=""></a>
-						    <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-							<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-						    <p>On Jun 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-					 </div>
-					<div class="col-md-6 top-text two">
-						 <a href="single.html"><img src="images/pic4.jpg" class="img-responsive" alt=""></a>
-						    <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-							<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-						    <p>On Jun 27 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-					 </div>
-					 <div class="clearfix"> </div>
-				 </div>
+				
+				 <div class="top-inner">
+					@include('front.home.latestblog')
 	            </div>
+	             <div class="clearfix"> </div>
 					<!--//top-news-->
 		     </div>
+		 </div>
 			<!--//banner-section-->
 			<div class="banner-right-text">
 			 <h3 class="tittle">News  <i class="glyphicon glyphicon-facetime-video"></i></h3>
 			<!--/general-news-->
 			 <div class="general-news">
-				<div class="general-inner">
-					<div class="general-text">
-						 <a href="single.html"><img src="images/gen1.jpg" class="img-responsive" alt=""></a>
-						    <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-							<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-						    <p>On Jun 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-					 </div>
-					 <div class="edit-pics">
-							      <div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt="">
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to simulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt="">
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to simulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt="">
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to simulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt="">
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to simulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								<div class="media">	
-								 <h3 class="tittle media">Media <i class="glyphicon glyphicon-floppy-disk"></i></h3>
-								  <div class="general-text two">
-									 <a href="single.html"><img src="images/gen3.jpg" class="img-responsive" alt=""></a>
-										<h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-										<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-										<p>On Jun 27 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-								  </div>
-					         </div>
-					    <div class="general-text two">
-						    <a href="single.html"><img src="images/gen2.jpg" class="img-responsive" alt=""></a>
-						    <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
-							<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
-						    <p>On Jun 27 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
-					    </div>
-				 </div>
-			</div>	
+				@include('front.home.news')
 			<!--//general-news-->
 			<!--/news-->
 			<!--/news-->

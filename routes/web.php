@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/admin', function () {
-    return view('back.master');
 
-});
-Route::get('/', function () {
+
+Route::get('/z', function () {
     return view('front.master');
 
 });
 
 Route::resource('/category','CategoryController');
 Route::resource('/blog','BlogController');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');
+Route::get('/', 'frontController@index')->name('home');
